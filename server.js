@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import "dotenv/config";
 import dotenv from 'dotenv';
 dotenv.config();
-const port = 8080;
+const port = process.env.PORT;
 const app = express();
 import * as db from "./databaseConnection.js";
 
