@@ -3,7 +3,7 @@ import database from "./databaseConnection";
 export async function getMoods() {
 	let sqlQuery = "SELECT * FROM moods";
 	const moods = await database.query(sqlQuery);
-	console.log(moods,"help me")
+	// console.log(moods,"help me")
 	return moods;
 }
 
@@ -16,7 +16,7 @@ async function getMood(id) {
 export async function addMood(note, rating, date) {
 	let sqlQuery = "INSERT INTO moods (note, rating, date) VALUES (?,?,?)";
 	const [mood] = await database.query(sqlQuery, [note, rating, date]).then(([result]) => getMood(result.insertId));
-	console.log([mood],"mood")
+	// console.log([mood],"mood")
 	return mood;
 }
 
